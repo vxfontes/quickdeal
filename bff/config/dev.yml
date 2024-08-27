@@ -1,0 +1,19 @@
+
+app:
+  name: quickdeal-bff
+  port: 3000
+  port_int: 3001
+  path: quickdeal_dev
+  timeout: 40000
+  env: hml
+  log: true
+
+db:
+  postgres:
+    host: 'localhost'
+    user: 'postgres'
+    password: 'postgres'
+    database: 'postgres'
+    port: 5432
+    poolMax: 2
+    poolMin: 1
