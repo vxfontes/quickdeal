@@ -13,7 +13,8 @@ db:
     host: 'localhost'
     user: 'postgres'
     password: 'postgres'
-    database: 'postgres'
+    database: 'devdbqd'
+    schema: 'app'
     port: 5432
     poolMax: 2
     poolMin: 1

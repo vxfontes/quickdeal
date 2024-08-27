@@ -24,6 +24,7 @@
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#loppy_disk-database">Database</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
 </p>
 
@@ -45,6 +46,20 @@ Backend for FrontEnd - QuickDeal
 ## :white_check_mark: Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
+## :floppy_disk: Database
+
+Este projeto utiliza o PostgreSQL como sistema de gerenciamento de banco de dados e o TypeORM como ferramenta de mapeamento objeto-relacional (ORM). 
+
+### O que é TypeORM?
+
+TypeORM é uma ORM que permite a interação entre o banco de dados e o código da aplicação de maneira simples e eficiente. Ele faz o mapeamento entre as entidades da aplicação (classes TypeScript) e as tabelas do banco de dados, facilitando operações como consultas, inserções, atualizações e exclusões sem a necessidade de escrever SQL diretamente.
+
+### Documentação e Instruções
+
+- **Documentação Base:** Você pode encontrar uma explicação detalhada sobre a configuração e uso do banco de dados em [README.md](./src/database/README.md).
+- **Instruções de Instalação e Configuração:** Para baixar, instalar e configurar o PostgreSQL, bem como criar o banco de dados necessário para o projeto, consulte [database.md](./docs/database.md).
+
 
 ## :checkered_flag: Starting ##
 
