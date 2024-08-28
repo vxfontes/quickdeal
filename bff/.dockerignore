@@ -1,0 +1,12 @@
+.gitignore
+.git
+.git/**
+**/.git
+**/.DS_Store
+**/node_modules
+node_modules/**
+node_modules
+**/.pnpm
+.pnpm/**
+.pnpm
+dist
