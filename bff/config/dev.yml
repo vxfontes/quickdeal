@@ -8,6 +8,9 @@ app:
   env: dev
   log: true
 
+security:
+  jwtsecret: 'secret dev decode this in quick deal'
+
 db:
   postgres:
     host: 'localhost'
