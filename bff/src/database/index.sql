@@ -51,12 +51,11 @@ CREATE TABLE "product" (
 CREATE TABLE "review" (
     "id" UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     "product_id" UUID,
-    "user_id" UUID,
+    "user_name" VARCHAR(255) NOT NULL,
     "rating" INT NOT NULL,
     "comment" TEXT,
     "created_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY ("product_id") REFERENCES "product"("id"),
-    FOREIGN KEY ("user_id") REFERENCES "user"("id")
+    FOREIGN KEY ("product_id") REFERENCES "product"("id")
 );
 
 CREATE TABLE "category" (
