@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "ENVIRONMENT_ID=dev nest start --watch",
+    "start:deb": "ENVIRONMENT_ID=deb node dist/main",
     "start:dev": "ENVIRONMENT_ID=dev node dist/main",
     "start:hml": "ENVIRONMENT_ID=hml node dist/main",
     "start:prd": "ENVIRONMENT_ID=prd node dist/main",

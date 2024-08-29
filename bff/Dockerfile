@@ -1,7 +1,7 @@
-FROM node:18 AS build
+FROM node:22
 
 # Define o diretório de trabalho dentro do contêiner
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 

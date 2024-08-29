@@ -5,7 +5,7 @@ app:
   port_int: 3001
   path: quickdeal_bff
   timeout: 40000
-  env: dev
+  env: deb
   log: true
 
 security:
@@ -13,12 +13,12 @@ security:
 
 db:
   postgres:
-    host: 'localhost'
+    host: '127.0.0.1'
     username: 'postgres'
     password: 'postgres'
     database: 'devdbqd'
     schema: 'app'
     synchronize: true
-    port: 5432
+    port: 5433
     poolMax: 2
     poolMin: 1
