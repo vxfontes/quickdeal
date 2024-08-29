@@ -32,7 +32,7 @@ Este guia irá te guiar pelo processo de configuração e inicialização do amb
 
 1. Verifique processos PostgreSQL na porta 5432:
    ```bash
-   sudo netstat -tuln | grep :5432
+   sudo ss -tap | grep :5432
    ```
 
 2. Mate o processo PostgreSQL pelo PID:
@@ -89,8 +89,8 @@ Após fazer login no PgAdmin:
    - **Username:** postgres
    - **Password:** postgres
 3. Clique em **Save** para criar o servidor.
-4. Perceba que já foi criada automaticamente a database com o nome de **devdbqd**, mas precisamos criar o **schema**
-5. Clique na database devdbqd e crie o schema **app**
+4. Perceba que já foi criada automaticamente a database com o nome de **devdbqd**, caso não tenha criado, clique com botão direito > create > database...
+5. Precisamos criar o **schema**, clique na database devdbqd e crie o schema **app**
 
 Finalizando isso, encerre o docker e o rode novamente, utilizando:
 
