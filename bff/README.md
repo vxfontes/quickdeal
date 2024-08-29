@@ -57,6 +57,7 @@ TypeORM é uma ORM que permite a interação entre o banco de dados e o código 
 
 ### Documentação e Instruções
 
+- **Documentação da api:** acesse a documentação em [doc da api](http://localhost:3000/swagger-ui/)
 - **Documentação Base:** Você pode encontrar uma explicação detalhada sobre a configuração e uso do banco de dados em [README.md](./src/database/README.md).
 - **Instruções de Instalação e Configuração:** Para baixar, instalar e configurar o PostgreSQL, bem como criar o banco de dados necessário para o projeto, consulte [database.md](./docs/database.md).
 - **Instruções para utilização do docker:** Para rodar o projeto utilizando docker, consulte [docker.md](./docs/docker.md).
