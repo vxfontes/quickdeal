@@ -13,12 +13,12 @@ security:
 
 db:
   postgres:
-    host: '127.0.0.1'
+    host: 'db'
     username: 'postgres'
     password: 'postgres'
     database: 'devdbqd'
     schema: 'app'
     synchronize: true
-    port: 5433
+    port: 5432
     poolMax: 2
     poolMin: 1

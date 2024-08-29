@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: npm run start:dev
+    command: npm run start:deb
     container_name: quickdeal-bff
     working_dir: /usr/src/app
     volumes:
@@ -18,17 +18,14 @@ services:
 
   db:
     image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
     container_name: quickdeal-postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: devdbqd
     ports:
-      - "5432:5432"
-    networks:
-      - quickdeal-network
+      - '5432:5432'
   
   pgadmin:
     image: dpage/pgadmin4

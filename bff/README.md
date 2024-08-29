@@ -59,41 +59,17 @@ TypeORM é uma ORM que permite a interação entre o banco de dados e o código 
 
 - **Documentação Base:** Você pode encontrar uma explicação detalhada sobre a configuração e uso do banco de dados em [README.md](./src/database/README.md).
 - **Instruções de Instalação e Configuração:** Para baixar, instalar e configurar o PostgreSQL, bem como criar o banco de dados necessário para o projeto, consulte [database.md](./docs/database.md).
+- **Instruções para utilização do docker:** Para rodar o projeto utilizando docker, consulte [docker.md](./docs/docker.md).
 
 
 ## :checkered_flag: Starting ##
 
-- Project setup
+- Para rodar localmente após configurar o postgres
 
 ```bash
-$ yarn install
+$ yarn start:dev
+
+$ npm run start:dev
 ```
 
-- Compile and run the project
-
-```bash
-# development
-$ yarn run start
-
-# usndo config de dev
-$ yarn run start:dev
-
-# usndo config de hml
-$ yarn run start:hml
-
-# usndo config de prd
-$ yarn run start:prd
-```
-
-- Run tests
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
+- Para rodar localmente utilizando docker, consulte o documento [docker.md](./docs/docker.md).
