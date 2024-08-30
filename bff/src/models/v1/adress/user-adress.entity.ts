@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, PrimaryColumn } from 'typeorm';
-import { User } from '../user/user.entity';
 import { Address } from './adress.entity';
+import { User } from '../user/user.entity';
 
 @Entity({ name: 'user_address', schema: "app" })
 export class UserAddress {

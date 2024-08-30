@@ -2,6 +2,7 @@ import { Column, Entity, OneToMany } from 'typeorm';
 import { RoleEnum } from './role.entity';
 import { Base } from 'src/shared/entities/base.entity';
 import { Product } from '../product/product.entity';
+import { Review } from '../review/review.entity';
 
 @Entity({ name: 'user', schema: "app" })
 export class User extends Base {
@@ -20,4 +21,7 @@ export class User extends Base {
 
     @OneToMany(() => Product, (product) => product.store)
     products: Product[];
+
+    @OneToMany(() => Review, (product) => product.user)
+    reviews: Review[];
 }

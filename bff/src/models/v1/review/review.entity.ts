@@ -1,5 +1,5 @@
 import { Base } from 'src/shared/entities/base.entity';
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, JoinColumn } from 'typeorm';
+import { Entity, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Product } from '../product/product.entity';
 import { User } from '../user/user.entity';
 
@@ -18,4 +18,8 @@ export class Review extends Base {
     @ManyToOne(() => Product, {nullable: false})
     @JoinColumn({ name: 'product' })
     product: Product;
+
+    @ManyToOne(() => User, {nullable: false})
+    @JoinColumn({ name: 'user' })
+    user: User;
 }

@@ -1,8 +1,9 @@
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 import * as config from 'config-yml';
 import { join } from "path";
+import { VersionsApp } from "src/versions";
 
-const directoryAbove = join(__dirname, '../models/');
+const directoryAbove = join(__dirname, `../models/${VersionsApp.ENTITIES}/`);
 const filePattern = join(directoryAbove, '**', '*.entity.{js,ts}');
 
 export const dataSourceOptions: PostgresConnectionOptions = {
