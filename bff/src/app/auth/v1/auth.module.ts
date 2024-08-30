@@ -4,7 +4,7 @@ import { JwtModule } from "@nestjs/jwt";
 import * as config from "config-yml";
 import { AuthService } from "./auth.service";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { User } from "src/models/user/user.entity";
+import { User } from "src/models/v1/user/user.entity";
 
 @Module({
     imports: [

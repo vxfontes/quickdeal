@@ -1,12 +1,12 @@
 import { ApiProperty } from "@nestjs/swagger";
 
 export class BadRequestResponseDto {
-    @ApiProperty({ example: 400, description: "Código de status HTTP." })
-    statusCode: number;
+    @ApiProperty({ example: true, description: "Status HTTP." })
+    success: boolean;
 
-    @ApiProperty({ example: "Usuário ou senha inválidos", description: "Mensagem de erro." })
+    @ApiProperty({ example: "Houve um erro durante a requisição.", description: "Mensagem do erro." })
     message: string;
 
-    @ApiProperty({ example: "Bad Request", description: "Descrição do tipo de erro." })
-    error: string;
+    @ApiProperty({ example: "{ }", description: "Algum retorno do tipo de erro." })
+    data?: any;
 }

@@ -1,12 +1,12 @@
 import { Injectable, Logger } from "@nestjs/common";
 import { LoginInputDto } from "./dto/login-input.dto";
 import { InjectRepository } from "@nestjs/typeorm";
-import { User } from "src/models/user/user.entity";
 import { Repository } from "typeorm";
 import * as bcrypt from 'bcrypt';
 import { CreateUserInputDto } from "./dto/create-user-input.dto";
-import { RoleEnum } from "src/models/user/role.entity";
 import { ResponseEntity } from "src/shared/entities/response.entity";
+import { User } from "src/models/v1/user/user.entity";
+import { RoleEnum } from "src/models/v1/user/role.entity";
 
 @Injectable()
 export class AuthService {

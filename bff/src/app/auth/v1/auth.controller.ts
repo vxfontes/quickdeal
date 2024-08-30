@@ -6,6 +6,7 @@ import { LoginResponseDto } from "./dto/login-output.dto";
 import { BadRequestResponseDto } from "src/shared/core/errors/bad-request.error";
 import { CreateUserInputDto } from "./dto/create-user-input.dto";
 import { ResponseEntity } from "src/shared/entities/response.entity";
+import { CreateResponseDto } from "./dto/create-user-output.dto";
 
 @Controller("auth/v1")
 @ApiTags("auth")
@@ -32,7 +33,7 @@ export class AuthController {
     */
     @Post("register")
     @ApiOperation({ summary: "Registro de usuário", description: "Realiza o registro de um novo usuário." })
-    @ApiResponse({ status: 201, description: "Usuário criado com sucesso." })
+    @ApiResponse({ status: 201, description: "Usuário criado com sucesso.", type: CreateResponseDto })
     @ApiBadRequestResponse({ description: "Erro ao criar usuário.", type: BadRequestResponseDto })
     public async register(@Body() createModel: CreateUserInputDto): Promise<ResponseEntity> {
         const data = await this.authService.register(createModel);
