@@ -6,7 +6,10 @@ import { dataSourceOptions } from 'src/database/data-source-cli';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-    imports: [TypeOrmModule.forRoot(dataSourceOptions), AuthModule],
+    imports: [
+        TypeOrmModule.forRoot(dataSourceOptions), 
+        AuthModule,
+    ],
     controllers: [AppController],
     providers: [AppService],
 })
