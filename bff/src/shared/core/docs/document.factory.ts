@@ -13,6 +13,7 @@ export class DocumentFactory {
             .setTitle(DocumentConstants.TITLE)
             .setDescription(DocumentConstants.DESCRIPTION)
             .setVersion(DocumentConstants.VERSION)
+            .addBasicAuth()
             .build();
     }
 }

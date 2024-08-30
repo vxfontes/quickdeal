@@ -1,4 +1,4 @@
-import { Base } from 'src/shared/models/base.entity';
+import { Base } from 'src/shared/entities/base.entity';
 import { Entity, Column } from 'typeorm';
 
 @Entity({ name: 'address', schema: "app" })

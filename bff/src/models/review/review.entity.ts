@@ -1,4 +1,4 @@
-import { Base } from 'src/shared/models/base.entity';
+import { Base } from 'src/shared/entities/base.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, JoinColumn } from 'typeorm';
 import { Product } from '../product/product.entity';
 import { User } from '../user/user.entity';

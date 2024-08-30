@@ -1,4 +1,4 @@
-import { Base } from 'src/shared/models/base.entity';
+import { Base } from 'src/shared/entities/base.entity';
 import { Entity, Column, OneToMany } from 'typeorm';
 import { Product } from '../product/product.entity';
 

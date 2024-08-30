@@ -1,6 +1,7 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 import { RoleEnum } from './role.entity';
-import { Base } from 'src/shared/models/base.entity';
+import { Base } from 'src/shared/entities/base.entity';
+import { Product } from '../product/product.entity';
 
 @Entity({ name: 'user', schema: "app" })
 export class User extends Base {
@@ -16,4 +17,7 @@ export class User extends Base {
 
     @Column({ type: 'enum', enum: RoleEnum, nullable: false })
     role: string;
+
+    @OneToMany(() => Product, (product) => product.store)
+    products: Product[];
 }
