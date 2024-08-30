@@ -19,50 +19,54 @@ export class AuthService {
     ) { }
 
     public async login({ email, password }: LoginInputDto): Promise<ResponseEntity> {
-        const existingUser = await this.UserRepository.findOne({ where: { email } })
-        if (!existingUser) return ResponseEntity.error("Usuário não encontrado.");
+        try {
+            const existingUser = await this.UserRepository.findOne({ where: { email } });
+            if (!existingUser) return ResponseEntity.error("Usuário não encontrado.");
 
-        const isPasswordValid = bcrypt.compareSync(password, existingUser.password);
-        if (!isPasswordValid) return ResponseEntity.error("Credenciais inválidas.");
+            const isPasswordValid = await bcrypt.compare(password, existingUser.password);
+            if (!isPasswordValid) return ResponseEntity.error("Credenciais inválidas.");
 
-        const { name, role } = existingUser;
-        const user = { name, role, email };
+            const { name, role } = existingUser;
+            const user = { name, role, email };
 
-        return ResponseEntity.success("Login realizado com sucesso!", user);
+            return ResponseEntity.success("Login realizado com sucesso!", user);
+        } catch (error) {
+            this.logger.error('Erro ao realizar login.', error);
+            return ResponseEntity.error("Erro ao realizar login.");
+        }
     }
 
+
     public async register({ email, name, password, role }: CreateUserInputDto): Promise<ResponseEntity> {
-        if (!Object.values(RoleEnum).includes(role)) {
-            this.logger.error('Erro ao criar conta, tipo de usuário inválido.');
-            return ResponseEntity.error('Tipo de usuário inválido.');
-        }
+        try {
+            if (!Object.values(RoleEnum).includes(role)) return ResponseEntity.error('Tipo de usuário inválido.');
 
-        // Verifica se o usuário já existe
-        const existingUser = await this.UserRepository.findOne({
-            where: { email },
-            select: ["email", "name", "password", "role"],
-        })
+            // Verifica se o usuário já existe
+            const existingUser = await this.UserRepository.findOne({
+                where: { email },
+                select: ["email", "name", "password", "role"],
+            });
 
-        if (existingUser) {
-            this.logger.error('Erro ao criar conta, usuario já existe.', existingUser);
-            return ResponseEntity.error('Usuário com esse email já existe.');
-        } else {
-            const hashedSenha = await bcrypt.hash(password, 10);
-            if (!hashedSenha) {
+            if (existingUser) return ResponseEntity.error('Usuário com esse email já existe.');
+
+            const hashedPassword = await bcrypt.hash(password, 10);
+            if (!hashedPassword) {
                 this.logger.error('Erro ao encriptar senha.');
                 return ResponseEntity.error('Erro ao criar conta.');
             }
 
-            this.UserRepository.save(this.UserRepository.create({
-                name, email, password: hashedSenha, role,
-            })).then((user) => {
-                this.logger.log('Sucesso na criação.', user);
-                const finalUser = { name, email, role };
-                return ResponseEntity.success('Conta criada com sucesso!', finalUser);
-            }).catch((error) => {
-                this.logger.error('Erro ao salvar usuário no banco de dados.', error);
-                return ResponseEntity.error('Erro ao criar conta.');
+            const newUser = this.UserRepository.create({
+                name, email, password: hashedPassword, role,
             });
+
+            const savedUser = await this.UserRepository.save(newUser);
+            this.logger.log('Sucesso na criação.', savedUser);
+
+            const finalUser = { name, email, role };
+            return ResponseEntity.success('Conta criada com sucesso!', finalUser);
+        } catch (error) {
+            this.logger.error('Erro ao criar conta.', error);
+            return ResponseEntity.error('Erro ao criar conta.');
         }
     }
 }

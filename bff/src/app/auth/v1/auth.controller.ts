@@ -24,6 +24,7 @@ export class AuthController {
     @ApiBadRequestResponse({ description: "Usuário ou senha inválidos.", type: BadRequestResponseDto })
     public async login(@Body() authModel: LoginInputDto): Promise<ResponseEntity> {
         const data = await this.authService.login(authModel);
+        console.log('data', data);
         if (data.isError()) throw new BadRequestException(data);
         return data;
     }

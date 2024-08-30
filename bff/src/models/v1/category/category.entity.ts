@@ -5,10 +5,10 @@ import { Product } from '../product/product.entity';
 @Entity('category')
 export class Category extends Base {
 
-    @Column()
+    @Column({ type: 'varchar', nullable: false, unique: true })
     name: string;
 
-    @Column()
+    @Column({ type: 'varchar', nullable: false })
     description: string;
 
     @OneToMany(() => Product, (product) => product.category)
