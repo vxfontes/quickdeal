@@ -7,6 +7,7 @@ export class LoginOutputDto extends PartialType(LoginInputDto) {}
 
 export class LoginResponseDto extends SuccessRequestResponseDto {
     @ApiProperty({ description: "Retorno do login do usuário.", example: {
+        id: 'qwew-e123',
         email: "teste@teste.com",
         name: "Teste",
         role: "customer",

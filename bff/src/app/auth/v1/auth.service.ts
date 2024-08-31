@@ -26,8 +26,8 @@ export class AuthService {
             const isPasswordValid = await bcrypt.compare(password, existingUser.password);
             if (!isPasswordValid) return ResponseEntity.error("Credenciais inválidas.");
 
-            const { name, role } = existingUser;
-            const user = { name, role, email };
+            const { id, name, role } = existingUser;
+            const user = { id, name, role, email };
 
             return ResponseEntity.success("Login realizado com sucesso!", user);
         } catch (error) {
@@ -62,7 +62,7 @@ export class AuthService {
             const savedUser = await this.UserRepository.save(newUser);
             this.logger.log('Sucesso na criação.', savedUser);
 
-            const finalUser = { name, email, role };
+            const finalUser = { id: savedUser.id, name, email, role };
             return ResponseEntity.success('Conta criada com sucesso!', finalUser);
         } catch (error) {
             this.logger.error('Erro ao criar conta.', error);

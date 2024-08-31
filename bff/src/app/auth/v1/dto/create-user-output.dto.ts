@@ -7,6 +7,7 @@ export class CreateOutputDto extends PartialType(CreateUserInputDto) {}
 
 export class CreateResponseDto extends SuccessRequestResponseDto {
     @ApiProperty({ description: "Retorno do cadastro do usuário.", example: {
+        id: 'qwew-e123',
         email: "teste@teste.com",
         name: "Teste",
         role: "customer",
