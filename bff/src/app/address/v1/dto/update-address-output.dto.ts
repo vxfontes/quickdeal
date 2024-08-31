@@ -4,7 +4,7 @@ import { UpdateAddressDto } from './update-address-input.dto';
 
 export class UpdateAddressResponseDto extends SuccessRequestResponseDto {
     @ApiProperty({ description: "Retorno do update de endereço.", example: {
-        id: '1',
+        id: 'f1a4e4af-dc52-41e8-bb01-ecf143a5f66d',
         street: "Rua teste",
         number: "123",
         neighborhood: "Bairro teste",
@@ -13,7 +13,7 @@ export class UpdateAddressResponseDto extends SuccessRequestResponseDto {
         zipCode: "12345-678",
         phone: "(11) 98765-4321",
         reference: "Próximo ao mercado",
-        user: "1erwe-erwe-erwe-erwe"
+        user: "f1a4e4af-dc52-41e8-bb01-ecf143a5f66d"
     }})
     data: UpdateAddressDto;
 }

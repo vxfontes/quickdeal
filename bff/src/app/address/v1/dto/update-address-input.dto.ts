@@ -5,7 +5,7 @@ export class UpdateAddressDto extends PartialType(CreateAddressDto) {
     @ApiProperty(
         {
             description: 'ID do endereço',
-            example: '1iuo-asdh-2333',
+            example: 'f1a4e4af-dc52-41e8-bb01-ecf143a5f66d',
         }
     )
     id: string;

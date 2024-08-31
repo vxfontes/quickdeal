@@ -7,7 +7,7 @@ export class FindAddressOutputDto extends PartialType(CreateAddressDto) {}
 
 export class FindAddressResponseDto extends SuccessRequestResponseDto {
     @ApiProperty({ description: "Retorno do cadastro de endereço.", example: {
-        id: '1',
+        id: 'f1a4e4af-dc52-41e8-bb01-ecf143a5f66d',
         street: "Rua teste",
         number: "123",
         neighborhood: "Bairro teste",
@@ -16,7 +16,7 @@ export class FindAddressResponseDto extends SuccessRequestResponseDto {
         zipCode: "12345-678",
         phone: "(11) 98765-4321",
         reference: "Próximo ao mercado",
-        user: "1asds-34cdc-dcdas"
+        user: "f1a4e4af-dc52-41e8-bb01-ecf143a5f66d"
     }})
     data: FindAddressOutputDto;
 }

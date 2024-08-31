@@ -49,6 +49,6 @@ export class CreateAddressDto {
     reference?: string;
 
     @IsNotEmpty({ message: ErrorConstant.MUST_HAVE })
-    @ApiProperty({ example: "1asd2-231d", description: "ID do usuário associado" })
+    @ApiProperty({ example: 'f1a4e4af-dc52-41e8-bb01-ecf143a5f66d', description: "ID do usuário associado" })
     user: string;
 }

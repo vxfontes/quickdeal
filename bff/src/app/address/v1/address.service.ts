@@ -26,18 +26,12 @@ export class AddressService {
             const existingUser = await this.userRepository.findOne({ where: { id: user } });
             if (!existingUser) return ResponseEntity.error('Usuário não existe no sistema.');
 
-            const newAddress = this.addressRepository.create({
-                street,
-                number,
-                complement,
-                neighborhood,
-                city,
-                phone,
-                user: existingUser,
-                zipCode,
-                reference,
-                state
-            });
+            const data = { street, number, complement, neighborhood, city, phone, user: existingUser, zipCode, reference, state }
+
+            const existingAddress = await this.addressRepository.findOne({ where: data });
+            if (existingAddress) return ResponseEntity.error('Endereço já existe para este usuário.');
+
+            const newAddress = this.addressRepository.create(data);
 
             const savedAddress = await this.addressRepository.save(newAddress);
             const { user: _, ...addressData } = savedAddress;

@@ -7,7 +7,7 @@ export class CreateCategoryOutputDto extends PartialType(CreateCategoryDto) {}
 
 export class CreateCategoryResponseDto extends SuccessRequestResponseDto {
     @ApiProperty({ description: "Retorno do cadastro da categoria.", example: [{
-        id: '1',
+        id: 'f1a4e4af-dc52-41e8-bb01-ecf143a5f66d',
         name: "Jogos eletrônicos",
         description: "Jogos para console ou PCs",
     }] })
