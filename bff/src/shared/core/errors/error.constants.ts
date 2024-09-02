@@ -1,5 +1,6 @@
 export class ErrorConstant {
     static MUST_HAVE = 'O campo $property é obrigatório';
+    static MUST_BE_POSITIVE = 'O campo $property deve ser um número positivo';
     static INVALID = '$property inválido';
     static INVALID_TYPE_STRING = '$property deve ser uma string';
     static INVALID_TYPE_NUMBER = '$property deve ser um numero';
